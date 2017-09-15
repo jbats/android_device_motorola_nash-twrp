@@ -15,11 +15,11 @@
 # limitations under the License.
 #
 
-TARGET_OTA_ASSERT_DEVICE := OnePlus5,cheeseburger,oneplus5,op5,A5000
+TARGET_OTA_ASSERT_DEVICE := Z2Force,nash,z2force,xt1789,XT1789
 
-PLATFORM_PATH := device/oneplus/cheeseburger
+PLATFORM_PATH := device/motorola/nash
 
-BOARD_VENDOR := oneplus
+BOARD_VENDOR := motorola
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_BOARD_PLATFORM := msm8998
 TARGET_BOOTLOADER_BOARD_NAME := MSM8998
@@ -47,10 +47,11 @@ TARGET_HW_DISK_ENCRYPTION := true
 #   <remote name="bitbucket"
 #           fetch="https://bitbucket.org/" />
 #   <project name="xanaxdroid/aarch64-6.3" path="prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-6.3.1-kernel-linaro" remote="bitbucket" revision="linaro" />
-TARGET_GCC_VERSION_ARM64 := 6.3.1-kernel-linaro
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-
-TARGET_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-KERNEL_TOOLCHAIN := $(realpath $(TOP))/prebuilts/gcc/$(strip $(HOST_OS))-x86/aarch64/$(TARGET_CROSS_COMPILE_PREFIX)$(TARGET_GCC_VERSION_ARM64)/bin
+# TARGET_GCC_VERSION_ARM64 := 6.3.1-kernel-linaro
+
+# TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-
+# TARGET_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+# KERNEL_TOOLCHAIN := $(realpath $(TOP))/prebuilts/gcc/$(strip $(HOST_OS))-x86/aarch64/$(TARGET_CROSS_COMPILE_PREFIX)$(TARGET_GCC_VERSION_ARM64)/bin
 
 # Kernel
 BOARD_KERNEL_CMDLINE := \
@@ -73,8 +74,8 @@ BOARD_RAMDISK_OFFSET     := 0x02000000
 TARGET_KERNEL_APPEND_DTB := true
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_SOURCE := kernel/oneplus/msm8998
-TARGET_KERNEL_CONFIG := cheeseburger_defconfig
+TARGET_PREBUILT_KERNEL := device/motorola/nash/kernel
+TARGET_KERNEL_CONFIG := nash_defconfig
 TARGET_FRESHLY_COMPILED_DTBTOOL := true
 TARGET_KERNEL_BUILD_VARIANT := user
 TARGET_KERNEL_APPEND_DTB := true
@@ -158,6 +159,7 @@ TW_INCLUDE_FB2PNG := true
 TW_NEW_ION_HEAP := true
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
+AB_OTA_UPDATER := true
 
 ifneq ($(TARGET_INCLUDED_DEVICE_MK),true)
 include $(PLATFORM_PATH)/device.mk
