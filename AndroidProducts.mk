@@ -15,4 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_sailfish.mk
+    $(LOCAL_DIR)/omni_nash.mk

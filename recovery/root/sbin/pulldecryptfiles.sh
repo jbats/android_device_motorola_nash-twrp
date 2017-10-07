@@ -10,18 +10,18 @@ mkdir -p /vendor
 mount -t ext4 -o ro /dev/block/bootdevice/by-name/vendor_a /vendor
 
 cp /vendor/lib64/libQSEEComAPI.so /sbin/libQSEEComAPI.so
-cp /vendor/lib64/hw/keystore.msm8996.so /sbin/keystore.msm8996.so
+cp /vendor/lib64/hw/keystore.msm8998.so /sbin/keystore.msm8998.so
 cp /vendor/lib64/libdrmfs.so /sbin/libdrmfs.so
 cp /vendor/lib64/libdrmtime.so /sbin/libdrmtime.so
 cp /vendor/lib64/librpmb.so /sbin/librpmb.so
 cp /vendor/lib64/libssd.so /sbin/libssd.so
 cp /vendor/lib64/libdiag.so /sbin/libdiag.so
 cp /vendor/lib64/libkmcrypto.so /sbin/libkmcrypto.so
-cp /vendor/lib64/hw/gatekeeper.msm8996.so /sbin/gatekeeper.msm8996.so
+cp /vendor/lib64/hw/gatekeeper.msm8998.so /sbin/gatekeeper.msm8998.so
 
 umount /vendor
 
 mkdir -p /vendor/lib64/hw
-cp /sbin/keystore.msm8996.so /vendor/lib64/hw/keystore.msm8996.so
-cp /sbin/gatekeeper.msm8996.so /vendor/lib64/hw/gatekeeper.msm8996.so
-cp /sbin/bootctrl.msm8996.so /vendor/lib64/hw/bootctrl.msm8996.so
+cp /sbin/keystore.msm8998.so /vendor/lib64/hw/keystore.msm8998.so
+cp /sbin/gatekeeper.msm8998.so /vendor/lib64/hw/gatekeeper.msm8998.so
+cp /sbin/bootctrl.msm8998.so /vendor/lib64/hw/bootctrl.msm8998.so
