@@ -15,4 +15,5 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_nash.mk
+    $(LOCAL_DIR)/omni_nash.mk \
+    $(LOCAL_DIR)/aosp_nash.mk 
