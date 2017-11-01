@@ -14,32 +14,27 @@
 # limitations under the License.
 #
 
-# Sample: This is where we'd set a backup provider if we had one
-# $(call inherit-product, device/sample/products/backup_overlay.mk)
-
 # Get the prebuilt list of APNs
 $(call inherit-product, vendor/omni/config/gsm.mk)
 
 # Inherit from the common Open Source product configuration
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+
+# Inherit language packages
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/omni/config/common.mk)
 
 PRODUCT_PACKAGES += \
-    charger_res_images \
-    charger
+    charger_res_images
 
+# Time Zone data for recovery
 PRODUCT_COPY_FILES += \
-    device/motorola/nash/kernel:kernel
+	bionic/libc/zoneinfo/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
 
-PRODUCT_NAME := omni_nash
 PRODUCT_DEVICE := nash
-PRODUCT_BRAND := Motorola
-PRODUCT_MODEL := Moto Z2 Force
+PRODUCT_NAME := omni_nash
+PRODUCT_BRAND := motorola
+PRODUCT_MODEL := Moto Z (2)
 PRODUCT_MANUFACTURER := Motorola
-
-# Kernel inline build
-#TARGET_KERNEL_CONFIG := nash_defconfig
-#TARGET_VARIANT_CONFIG := nash_defconfig
-#TARGET_SELINUX_CONFIG := nash_defconfig
